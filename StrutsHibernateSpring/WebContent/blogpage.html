@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<html> 
+<head> 
+<base href="<%=basePath%>"> 
+<title>Blog</title> 
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3"> 
+<meta http-equiv="description" content="This is my page"> 
+<style type="text/css"> 
+.right{ 
+margin:0% 0%; 
+height:20px;
+width:100%; 
+} 
+.right table{
+	background: white;
+	width: 100%;
+	border: 1px solid #499B33;
+	border-top-color: #FFF;
+	border-color: #000;
+	border-left-color: #FFF;
+	border-right-color: #FFF;
+} 
+.right td{ 
+height:80px;
+text-align:center; 
+padding:2px; 
+border:1px solid #499B33; 
+} 
+
+.item{ 
+text-align:center; 
+width:100px; 
+} 
+.assigned{ 
+border:1px solid #BC2A4D; 
+} 
+</style> 
+
+<script type="text/javascript">
+	function starta(recorder){
+		var flag=true;
+		var data1 = ""; 
+		data1 += " <table >"; 
+		data1 += " <tr>" + 
+		"<td align='center'>评论者</td>" +  
+		"<td align='center'>评论内容</td>" + 
+		"</tr>" ; 
+		for (var j = 1; j <= recorder; j++) { 
+			data1 += "<tr >"; 
+			data1 += "<td>" + j + "</td>";
+			data1 += "<td height='40px'><input name='ColdCureMethod"+j+"' type='text' class='input' style='width:100%;height:100%'></td>"; 
+			data1 += "</tr>"; 
+			} 
+		data1 += "</table>"; 
+		document.getElementById("div1").style.display = "block"; 
+		document.getElementById("table1").innerHTML = data1; 
+		//document.getElementById("blogText").setAttribute("readonly", "readonly");//设置文本域的内容为只读
+	}
+
+	function remarkSubmit(){
+		alert("评论已提交！！！");
+	}
+</script>
+</head> 
+<body onload="starta(11)"> 
+<br>
+<form action="" style="width: 100%">
+	<table style="width:100%;height:60px"> 
+		<tr style="height: 50%"> 
+			<td style="height:100%" align="left"><font color="blue" size="5">航运新人论坛</font></td>
+		</tr>
+		<tr style="height: 50%">
+			<td style="height: 100%" align="right">用户提示</td>
+		</tr> 
+	</table> 
+</form>
+<form action="" style="width: 100%">
+	<table style="width:100%;" border="1"> 
+		<tr height="300px">
+			<td style="width: 20%"></td> 
+			<td style="height:100%;width: 80%" align="center"><textarea id="blogText" rows="50" cols="150"></textarea></td>
+		</tr> 
+	</table> 
+	<div align="right"><input type="submit" value="评论" onclick="remarkSubmit()"></div>
+</form> 
+<div id="div1" style="width: 100%">
+	<table id="table1" style="width: 100%" border="0"></table>
+</div>
+</body> 
+</html> 

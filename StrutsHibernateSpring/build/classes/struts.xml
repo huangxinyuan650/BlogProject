@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 导入配置文件，通过这种方式可以将struts2的Action按模块配置到多个配置文件中。 -->
+	<include file="login.xml"/>
+	<include file="blog.xml"/>
+	<include file="critic.xml"/>
+	<package name="test" extends="struts-default">
+		<action name="test" class="test.TestAction">
+			<result name="success">/login_h.jsp</result>
+			<result name="error">/regeister_h.jsp</result>
+		</action>
+		
+		<action name="testOne" class="test.TestOneAction">
+			<result name="success">/test1.jsp</result>
+			<result name="error">/login_h.jsp</result>
+		</action>
+		<action name="testTwo" class="test.TestTwoAction">
+			<result name="success">/login_h.jsp</result>
+			<result name="success">/regeister_h.jsp</result>
+		</action>
+	</package>
+	<!-- 所有的Action配置都应该放在元素package下，name属性定义包名，extends属性定义继承的包空间struts-default -->
+	<!-- 
+	<package name="huang" extends="struts-default">
+		<action name="login" class="hxy.LoginAction">
+			<result name="success">/index.jsp</result>
+			<result name="error">/regester_h.html</result>
+		</action>
+	</package>
+	 -->
+</struts>

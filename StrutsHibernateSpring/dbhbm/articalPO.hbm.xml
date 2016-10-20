@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="blog.ArticalPO" table="articalinfo" catalog="myjavaweb">
+		<id name="id" type="int">
+			<column name="id"/>
+			<generator class="increment"/>
+		</id>
+		<property name="articalPath" type="java.lang.String">
+			<column name="articalpath" length="50" not-null="true"></column>
+		</property>
+	</class>
+</hibernate-mapping>

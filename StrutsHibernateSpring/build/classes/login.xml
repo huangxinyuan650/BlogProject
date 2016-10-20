@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="Login" extends="struts-default">
+		<action name="login" class="login.LoginAction">
+			<result name="success">/jsp/personalIndex.jsp</result>
+			<result name="error">/login_h.jsp</result>
+		</action>
+		<action name="register" class="login.RegisterAction">
+		<!-- 这里的result中可以有type属性，也就是这里的返回可以是另外的一个action，
+		如果为action的话就需要把这里的type就需要改成chain，这里就可以将传值回页面放到这里而不使用session -->
+			<result name="success">/login_h.jsp</result>
+			<result name="error">/regester_h.html</result>
+		</action>
+	</package>
+</struts>

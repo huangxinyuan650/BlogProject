@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="blog" extends="struts-default">
+		<action name="saveBlog" class="blog.SaveBlogAction">
+			<result name="success">/index.jsp</result>
+			<result name="error">/login_h.jsp</result>
+		</action>
+		<action name="showDetail" class="blog.ShowBlogInfoAction">
+			<result name="success">/jsp/blog.jsp</result>
+			<result name="error">login_h.jsp</result>
+		</action>
+	</package>
+</struts>

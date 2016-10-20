@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<style type="text/css">
+	body{
+		background: #aee2d8;
+	}
+	 #logincon{
+		width: 400px;
+		height: 400px;
+		background: #34495e;
+		padding-left: 60px;
+		padding-top: 80px;
+		border-radius: 175px;
+		margin: 100px auto;
+		position:relative;
+	}
+	 #logincon .txt{
+		height: 44px;
+		width: 188px;
+		background: #4f6475 url("image/1.png") no-repeat 14px;
+		color: #ffffff;
+		font-size: 15px;
+		font-family: "微软雅黑";
+		padding-left: 90px;
+		border: 1px solid #637686;
+		border-radius: 5px;
+	} 
+	#logincon .txt2{
+		background-image: url("image/2.png");
+		margin-top: 25px;
+	}
+	#logincon .txt3{
+		background-image: url("image/2.png");
+		margin-top: 25px;
+	}
+	 #logincon .but{
+		height: 40px;
+		width: 114px;
+		background: #00c9aa;
+		border: 0px;
+		border-radius: 5px;
+		font-size: 20px;
+		font-family: "微软雅黑";
+		margin-top: 25px;
+		float: center;
+		cursor: pointer;
+	}
+	#logincon a.reg{
+		width: 120px;
+		height: 120px;
+		background: #3fa0bd;
+		display: block;
+		text-align: center;
+		line-height: 120px;
+		font-size: 24px;
+		color: #ffffff;
+		font-family: "微软雅黑";
+		text-decoration: none;
+		border-radius: 60px;
+		filter:Alpha(opacity=80);
+		-moz-opacity:0.8;
+		opacity: 0.8;
+		position: absolute;
+		top: 370px;
+		left: 0px;
+	}
+
+	</style>
+
+</head>
+<body>
+	<div id="logincon">
+			<form method="post" action="register">
+				<div align="center"><label><font color="#FFFFFF" size="6">用户注册</font></label></div><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>用户名：&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" class="txt" name="userName" id="userName"/><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;</label><input type="password" class="txt txt2" name="password" id="password"/><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>确认密码：</label><input type="password" class="txt txt3" name="password2" id="password2"/><br>
+				<div align="center"><input type="submit" class="but" value="提交" /></div>				
+			</form>
+				<a href="login_h.html" class="reg">返回登录</a>
+		</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 表明解析本xml文件的DTD文档的位置，DTD是Document Type Definition的缩写，
+即文档类型的定义，xml解析器使用DTD文档来检查xml文件的合法性。Hibernate版本不
+一样的配置文件中的DTD信息会有一定的差异 -->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/HibernateConfiguration DTD3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- Hibernate配置文件的根元素，其他元素应包含在其中 -->
+<hibernate-configuration>
+	<!-- 指定初始化hibernate参数的元素，表明以下的配置针对session-factory配置，
+	SessionFactory是Hibernate中的一个接口，这个接口主要负责保存Hibernate的配置信息，
+	以及对Session的操作  -->
+	<session-factory>
+		<!-- 指定连接数据库所用的驱动 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 设置数据库的连接字符串 -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/myjavaweb</property>
+		<!-- 指定数据库的登录名 -->
+		<property name="connection.username">root</property>
+		<property name="connection.password">huang650</property>
+		<!-- 指定连接池里的最大连接个数，使用连接池需要加载所用的连接池jar文件 -->
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<!-- 指定连接池的连接的超时时长 -->
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<!-- 指定数据库的方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<!-- 根据需要自动创建数据表 -->
+		<property name="hbm2ddl.auto">uodate</property>
+		<!-- 设置是否将hibernate发送给数据库的SQl显示出来，调试时可用 -->
+		<property name="show_sql">true</property>
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 指定缓存产品所需要的类 -->
+		<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property>
+		<!-- 启用查询缓存 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- 对数据库的增删改查性能有很大影响 -->
+		<!-- 设定jdbc的statement每次从数据库取出的记录数 -->
+		<property name="hibernate.jdbc.fetch_size">30</property>
+		<!-- 设置批量删除 -->
+		<property name="hibernate.jdbc.batch_size">5</property>
+		
+		<!-- 加入映射文件 -->
+		<!-- 
+			<mapping resource="path/xxx.hbm.xml"/>
+		 -->
+		 <mapping resource="blogInfoPO.hbm.xml"/>
+		 <mapping resource="UserPO.hbm.xml"/>
+		 <mapping resource="articalPO.hbm.xml"/>
+		 <mapping resource="userDetailInfo.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

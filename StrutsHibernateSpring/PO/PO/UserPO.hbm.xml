@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件的DTD -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 映射文件的根元素 -->
+<hibernate-mapping>
+	<!-- 配置PO对象与数据库中表的对应关系使用class元素，name配置PO对象对应的类
+	table配置该PO对象在数据库中对应的表名，catalog配置表对应的数据库的名 -->
+	
+	<class name="PO.UserPO" table="userinfo" catalog="myjavaweb">
+		<!-- id元素配置po对象与数据库中表的id字段，name配置PO对象对应的属性，type指定po对象该属性的类型
+		，column元素配置表和po对象属性对应的字段，即把PO对象中的指定属性存到表欧中指定字段中，generator元素是对主键值自动加入序列 -->
+		<id name="id" type="int">
+			<column name="id"/>
+			<generator class="increment"></generator><!-- increment自增   -->
+		</id>
+		
+		<!-- property元素配置PO对象中的某个属性对应表中的某个字段，即实现一一对应的映射关系，name指定PO对象的属性，type指定属性的类型 -->
+		<property name="userName" type="java.lang.String">
+			<!-- column元素配置对应的表中的字段，length指定字段的长度，not-null设置字段是否为空 -->
+			<column name="username" length="20" not-null="true"/>
+		</property>
+		
+		<property name="password" type="java.lang.String">
+			<column name="password" length="10" not-null="true"/>
+		</property>
+		
+		<property name="role" type="java.lang.String">
+			<column name="role" length="20" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

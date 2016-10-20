@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="blog.BlogInfo" table="bloginfo" catalog="myjavaweb">
+		<id name="id" type="int">
+			<column name="id"/>
+			<generator class="increment"/>
+		</id>
+		<property name="author" type="java.lang.String">
+			<column name="author" length="20"></column>
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="60"></column>
+		</property>
+		<property name="writeTime" type="java.util.Date">
+			<column name="writetime" sql-type="Date"></column>
+		</property>
+		<property name="contextPath" type="java.lang.String">
+			<column name="contextpath" length="50"></column>
+		</property>
+	</class>
+</hibernate-mapping>
